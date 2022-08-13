@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $("#out").attr("disabled",true);
+                $("#in").click(function(){
+                    if(confirm("You Are My User.."))
+                    {
+                        $("#demo1").fadeIn(1000);
+                        $("#demo2").fadeIn(2000);
+                        $("#demo3").fadeIn(3000);
+
+                        $("#out").attr("disabled",false);
+                        $("#in").attr("disabled",true);
+                    }
+                });
+
+                $("#out").click(function(){
+                    if(confirm("You Are My User.."))
+                    {
+                        $("#demo1").fadeout(1000);
+                        $("#demo2").fadeout(2000);
+                        $("#demo3").fadeout(3000);
+
+                        $("#out").attr("disabled",true);
+                        $("#in").attr("disabled",false);
+                    }
+                });
+
+                $("#fout").click(function(){
+                    if(confirm("You Are My User.."))
+                    {
+                        $("#demo1").fadeToggle(1000);
+                        $("#demo2").fadeToggle(2000);
+                        $("#demo3").fadeToggle(3000);
+                    }  
+                    });
+            })
+    </script>
+</head>
+<body>
+        <button id="in">click me in</button>&nbsp;&nbsp;
+        <button id="out">click me out</button>&nbsp;&nbsp;
+        <button id="fout">Toggle</button> <hr>
+
+        <div id="demo1" style="height: 100px; width: 100px; background-color: palevioletred;"></div> <br>
+        <div id="demo2" style="height: 100px; width: 100px; background-color: black;"></div> <br>
+        <div id="demo3" style="height: 100px; width: 100px; background-color: red;"></div> <br>
+</body>
+</html>
